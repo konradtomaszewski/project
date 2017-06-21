@@ -1,0 +1,34 @@
+<md-dialog aria-label="Autocomplete Dialog Example" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Autocomplete Dialog Example</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="img/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+		<form role="form">
+            <div layout-gt-xs="row">
+                  <md-input-container class="md-block" flex-gt-xs="">
+                    <label>Tytuł</label>
+                    <input ng-model="questList.tytul"  size="30" placeholder="tytuł">
+                  </md-input-container>
+				  
+                  <md-datepicker ng-model="questList.data" md-placeholder="Data"></md-datepicker>
+                  				  
+                  <md-input-container class="md-block">
+                    <label>Opis</label>
+                    <textarea ng-model="questList.opis" md-maxlength="50" rows="5" md-select-on-focus placeholder="Opis"></textarea>
+                  </md-input-container>
+				  
+                  		  
+                  <md-button ng-click="answer(questList)" class="md-raised md-primary">Zapisz</md-button>
+            </div>
+        </form>
+    </div>
+  </md-dialog-content>
+</md-dialog>

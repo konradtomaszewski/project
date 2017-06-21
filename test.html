@@ -1,0 +1,17 @@
+<md-button class="md-primary md-raised" ng-controller="DemoCtrl as questList" ng-click="questList.openDialog($event)">formularz</md-button>
+
+ <div ng-controller="DemoCtrl as questList" layout="column" layout-align="center" >
+            <md-card ng-repeat="quest in questList.allsQ" id="prova">
+                <md-card-title>
+                    <md-card-title-text layout="row">
+                      <span flex layout ="column"><b>Titolo</b>{{quest.titolo}}</span>
+                      <span flex layout ="column"><b>Capitolo</b>{{quest.capitolo}}</span>
+                      <span flex layout ="column"><b>Descrizione</b>{{quest.descrizione}}</span>
+                      <span flex layout ="column"><b>Importo</b>{{quest.importo}}</span>
+                      <span flex layout ="column"><b>Data</b>{{quest.data}}</span>
+                      <md-button ng-click="questList.modifica()">Modifica</md-button>
+                      <md-button ng-click="questList.rimuovi()">Elimina</md-button>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+      </div>

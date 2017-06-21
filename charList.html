@@ -1,0 +1,41 @@
+<md-subheader class="md-primary">Postacie</md-subheader>
+                   
+   <table class="highlight">
+		<thead>
+		<tr">
+			<th><span>name</span></th>
+			<th><span>phone</span></th>
+			<th><span>delete</span></th>  
+
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in people">
+				<td><a data-ng-href="#showCharInfo/{{person.name}}">{{ person.name }}</a></td>
+				<td><a data-ng-href="#showCharInfo/{{person.name}}">{{ person.phone }}</a></td>
+				<td><md-button class="md-primary md-raised" ng-click="deletePerson( person.id )">Delete</md-button></td>
+				<td><md-button class="md-primary md-raised" ng-controller="AppCtrl" ng-click="showPrompt($event, person.name)">Prompt Dialog</md-button></td>
+				<td><md-button class="md-primary md-raised" ng-controller="DemoCtrl as questList" ng-click="questList.openDialog($event)">formularz</md-button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	
+	<div ng-if="status" id="status" ng-controller="AppCtrl"><b layout="row" layout-align="center center" class="md-padding">{{status}}</b></div>
+	 
+	 
+	 <div ng-controller="DemoCtrl as questList" layout="column" layout-align="center" >
+            <md-card ng-repeat="quest in questList.allsQ" id="prova">
+                <md-card-title>
+                    <md-card-title-text layout="row">
+                      <span flex layout ="column"><b>Titolo</b>{{quest.titolo}}</span>
+                      <span flex layout ="column"><b>Capitolo</b>{{quest.capitolo}}</span>
+                      <span flex layout ="column"><b>Descrizione</b>{{quest.descrizione}}</span>
+                      <span flex layout ="column"><b>Importo</b>{{quest.importo}}</span>
+                      <span flex layout ="column"><b>Data</b>{{quest.data}}</span>
+                      <md-button ng-click="questList.modifica()">Modifica</md-button>
+                      <md-button ng-click="questList.rimuovi()">Elimina</md-button>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+      </div>
