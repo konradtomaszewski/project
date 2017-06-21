@@ -300,40 +300,40 @@
 					var questList = this;
 					questList.allsQ = [];
 					questList.openDialog = function($event) {
-					  $mdDialog.show({
-						controller: function ($timeout, $q, $scope, $mdDialog) {
-								var questList =this;
-								$scope.cancel = function($event) {
-								$mdDialog.cancel();
-								};
-								$scope.finish = function($event) {
-								$mdDialog.hide();
-								};
-								$scope.answer = function(answer) {
-								$mdDialog.hide(answer);
-								};
-								},
-						controllerAs: 'questList',
-						templateUrl: 'dialog.tmpl.html',
-						parent: angular.element(document.body),
-						targetEvent: $event,
-						clickOutsideToClose:true,
-						locals: {parent: $scope},
-					  })
-					 .then(function(answer) {  
-						console.log("answer")
-						console.log(answer)
-					  questList.allsQ.push({
-						 tytul: answer.tytul ,
-						 data: answer.data,
-						 opis: answer.opis
-					  });
-					  questList.tytul = '';
-					  questList.data = '';
-					  questList.opis = '';
-					  console.log(questList.allsQ);
-					  console.log(questList.allsQ.length);
-					});
+						$mdDialog.show({
+							controller: function ($timeout, $q, $scope, $mdDialog) {
+										var questList =this;
+										$scope.cancel = function($event) {
+											$mdDialog.cancel();
+										};
+										$scope.finish = function($event) {
+											$mdDialog.hide();
+										};
+										$scope.answer = function(answer) {
+											$mdDialog.hide(answer);
+										};
+							},
+							controllerAs: 'questList',
+							templateUrl: 'dialog.tmpl.html',
+							parent: angular.element(document.body),
+							targetEvent: $event,
+							clickOutsideToClose:true,
+							locals: {parent: $scope},
+						})
+						.then(function(answer) {
+							console.log("answer")
+							console.log(answer)
+							questList.allsQ.push({
+								tytul: answer.tytul ,
+								data: answer.data,
+								opis: answer.opis
+							});
+							questList.tytul = '';
+							questList.data = '';
+							questList.opis = '';
+							console.log(questList.allsQ);
+							console.log(questList.allsQ.length);
+						});
 					};
 				};
 			
