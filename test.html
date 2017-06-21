@@ -1,6 +1,6 @@
 <md-button class="md-primary md-raised" ng-controller="DemoCtrl as questList" ng-click="questList.openDialog($event)">formularz</md-button>
 
-  <div ng-controller="DemoCtrl as questList" layout="column" layout-align="center" >
+  <div ng-cloak ng-controller="DemoCtrl as questList" class="tabsdemoDynamicHeight" ng-cloak="">
             <md-card ng-repeat="quest in questList.allsQ" id="prova">
                 <md-card-title>
                     <md-card-title-text layout="row">
@@ -14,5 +14,4 @@
                 </md-card-title>
             </md-card>
 {{questList.allsQ}}
-
 </div>

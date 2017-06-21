@@ -24,7 +24,8 @@
 						.when('/test', {
 							title: 'test',
 							templateUrl: 'test.html',
-							controller: 'DemoCtrl'
+							controller: 'DemoCtrl',
+							controllerAs: 'questList'
 						})
 						.otherwise({
 							title: 'Lista osób',
